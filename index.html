@@ -5,95 +5,137 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Top Rated Tattoo Machines | InkWith.Me</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         body { background-color: #0a0a0a; color: #ffffff; font-family: 'Inter', sans-serif; }
         .accent-color { color: #3b82f6; }
         .bg-accent { background-color: #3b82f6; }
         .bg-accent:hover { background-color: #2563eb; }
         
-        /* YouTube Video Responsive Container */
+        /* වීඩියෝ කන්ටේනරය */
+        .video-wrapper {
+            position: relative;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
+            border: 1px solid #374151;
+        }
+
         .video-container { 
             position: relative; 
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            padding-bottom: 56.25%; /* 16:9 Ratio */
             height: 0; 
-            overflow: hidden; 
-            box-shadow: 0 0 40px rgba(59, 130, 246, 0.2); 
             background-color: #000;
         }
         .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-            pointer-events: none; /* පාරිභෝගිකයාට වීඩියෝ එක නවත්වන්න බැරි වෙන්න */
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+        }
+
+        /* සද්දෙ දාන බටන් එක (Overlay) */
+        #soundOverlay {
+            position: absolute; inset: 0;
+            background: rgba(0,0,0,0.6);
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            cursor: pointer; z-index: 10;
+            transition: all 0.3s ease;
+        }
+        #soundOverlay:hover { background: rgba(0,0,0,0.4); }
+        .play-btn-wrap {
+            background: rgba(59, 130, 246, 0.9);
+            padding: 1.5rem; border-radius: 50%;
+            margin-bottom: 1rem;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(59, 130, 246, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
         }
     </style>
 </head>
 <body class="antialiased">
 
-    <nav class="py-6 border-b border-gray-800">
-        <div class="container mx-auto px-6 text-center">
-            <h1 class="text-3xl font-extrabold tracking-widest uppercase">InkWith<span class="accent-color">.Me</span></h1>
+    <nav class="py-3 border-b border-gray-800">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-xl font-bold tracking-widest uppercase">InkWith<span class="accent-color">.Me</span></h1>
         </div>
     </nav>
 
-    <main class="container mx-auto px-6 py-12 md:py-20 text-center">
+    <main class="container mx-auto px-4 py-6 md:py-10 text-center max-w-4xl">
         
-        <h2 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-            Activate Your <br/><span class="accent-color">Artistic Inspiration</span>
+        <h2 class="text-2xl md:text-4xl font-bold mb-3 leading-tight">
+            The Pinnacle of <span class="accent-color">Tattoo Technology</span>
         </h2>
-        <p class="text-gray-400 text-lg md:text-xl mb-12 max-w-2xl mx-auto">
-            Experience the pinnacle of tattoo technology. Discover the MAST ULTRA and other top-rated, master-crafted wireless machines designed for precision and power.
+        <p class="text-gray-400 text-sm md:text-base mb-6 max-w-xl mx-auto">
+            Discover Master-crafted wireless machines designed for precision and power.
         </p>
 
-        <div class="max-w-4xl mx-auto mb-12 rounded-2xl overflow-hidden video-container border border-gray-800">
-            
-            <iframe 
-                src="https://www.youtube.com/embed/QgIq_jWlAQA?autoplay=1&mute=1&loop=1&playlist=QgIq_jWlAQA&controls=0&showinfo=0&rel=0" 
-                allow="autoplay; encrypted-media" 
-                allowfullscreen>
-            </iframe>
-            
+        <div class="video-wrapper mb-8">
+            <div id="soundOverlay" onclick="playWithSound()">
+                <div class="play-btn-wrap">
+                    <i class="fas fa-volume-up text-white text-3xl"></i>
+                </div>
+                <p class="text-white font-bold tracking-wider uppercase">Click to Play with Sound</p>
+            </div>
+
+            <div class="video-container">
+                <iframe id="mainVideoFrame"
+                    src="https://www.youtube.com/embed/QgIq_jWlAQA?autoplay=1&mute=1&loop=1&playlist=QgIq_jWlAQA&controls=0&showinfo=0&rel=0&modestbranding=1" 
+                    allow="autoplay; encrypted-media" 
+                    allowfullscreen>
+                </iframe>
+            </div>
         </div>
 
-        <div class="flex flex-col items-center justify-center gap-4 mt-8">
+        <div class="flex flex-col items-center justify-center gap-3">
             <a href="https://dragonhawkofficial.com/product-category/tattoo-machines/ref/783/?orderby=rating&campaign=inkwithme" 
                target="_blank" rel="noopener noreferrer" 
-               class="bg-accent text-white font-bold py-5 px-12 rounded-full text-xl transition duration-300 shadow-lg shadow-blue-500/50 transform hover:scale-105">
-               🛒 Shop Best-Rated Machines Now
+               class="bg-accent w-full md:w-auto text-white font-bold py-4 px-8 rounded-full text-lg transition duration-300 shadow-lg shadow-blue-500/50 transform hover:scale-105 flex items-center justify-center">
+               <i class="fas fa-shopping-cart mr-3"></i> Shop Best-Rated Machines Now
             </a>
-            <p class="mt-4 text-sm text-gray-500">
-                ⭐ Trusted by thousands of professional artists worldwide.
+            <p class="mt-2 text-xs text-gray-500">
+                ⭐ Trusted by professional artists worldwide.
             </p>
         </div>
         
     </main>
 
-    <section class="border-t border-gray-800 py-16 bg-[#111]">
-        <div class="container mx-auto px-6 max-w-5xl">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <div class="p-6 bg-black rounded-xl border border-gray-800">
-                    <h3 class="text-xl font-bold mb-2 text-white">Smart Touch Screen</h3>
-                    <p class="text-gray-400 text-sm">Full-size circular interactive display for perfect voltage control.</p>
+    <section class="border-t border-gray-800 py-8 bg-[#111] mt-4">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <div class="grid grid-cols-3 gap-4 text-center">
+                <div class="p-3 bg-black rounded-lg border border-gray-800">
+                    <h3 class="text-sm font-bold mb-1 text-white">Smart Touch</h3>
+                    <p class="text-gray-500 text-xs hidden md:block">Interactive display control.</p>
                 </div>
-                <div class="p-6 bg-black rounded-xl border border-gray-800">
-                    <h3 class="text-xl font-bold mb-2 text-white">2300mAh Battery</h3>
-                    <p class="text-gray-400 text-sm">High-capacity fast charging system for uninterrupted tattoo sessions.</p>
+                <div class="p-3 bg-black rounded-lg border border-gray-800">
+                    <h3 class="text-sm font-bold mb-1 text-white">2300mAh</h3>
+                    <p class="text-gray-500 text-xs hidden md:block">High-capacity battery.</p>
                 </div>
-                <div class="p-6 bg-black rounded-xl border border-gray-800">
-                    <h3 class="text-xl font-bold mb-2 text-white">MCORE Motor</h3>
-                    <p class="text-gray-400 text-sm">Super integrated structural design with a 4.5mm extra-large stroke.</p>
+                <div class="p-3 bg-black rounded-lg border border-gray-800">
+                    <h3 class="text-sm font-bold mb-1 text-white">MCORE Motor</h3>
+                    <p class="text-gray-500 text-xs hidden md:block">Powerful stroke design.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="text-center py-8 text-gray-600 text-sm">
-        <p>&copy; 2024 InkWith.Me. All rights reserved.</p>
-        <p class="mt-2 text-xs opacity-70">Disclosure: We may earn an affiliate commission if you purchase through our links, at no extra cost to you.</p>
+    <footer class="text-center py-4 text-gray-600 text-xs border-t border-gray-900">
+        <p>Isuru Madushan &copy; 2024 InkWith.Me.</p>
     </footer>
+
+    <script>
+        function playWithSound() {
+            var overlay = document.getElementById('soundOverlay');
+            var iframe = document.getElementById('mainVideoFrame');
+            
+            // Overlay එක අයින් කරනවා
+            overlay.style.display = 'none';
+            
+            // වීඩියෝ එක සද්දෙත් එක්ක (mute=0) ආයෙත් ප්ලේ කරනවා
+            iframe.src = "https://www.youtube.com/embed/QgIq_jWlAQA?autoplay=1&mute=0&loop=1&playlist=QgIq_jWlAQA&controls=1&showinfo=0&rel=0&modestbranding=1";
+        }
+    </script>
 
 </body>
 </html>
