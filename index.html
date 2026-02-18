@@ -12,7 +12,6 @@
         .bg-accent { background-color: #3b82f6; }
         .bg-accent:hover { background-color: #2563eb; }
         
-        /* වීඩියෝ කන්ටේනරය */
         .video-wrapper {
             position: relative;
             border-radius: 1rem;
@@ -23,7 +22,7 @@
 
         .video-container { 
             position: relative; 
-            padding-bottom: 56.25%; /* 16:9 Ratio */
+            padding-bottom: 56.25%; 
             height: 0; 
             background-color: #000;
         }
@@ -31,7 +30,6 @@
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
         }
 
-        /* සද්දෙ දාන බටන් එක (Overlay) */
         #soundOverlay {
             position: absolute; inset: 0;
             background: rgba(0,0,0,0.6);
@@ -54,7 +52,7 @@
         }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased flex flex-col min-h-screen">
 
     <nav class="py-3 border-b border-gray-800">
         <div class="container mx-auto px-4 text-center">
@@ -62,7 +60,7 @@
         </div>
     </nav>
 
-    <main class="container mx-auto px-4 py-6 md:py-10 text-center max-w-4xl">
+    <main class="container mx-auto px-4 py-6 md:py-10 text-center max-w-4xl flex-grow">
         
         <h2 class="text-2xl md:text-4xl font-bold mb-3 leading-tight">
             The Pinnacle of <span class="accent-color">Tattoo Technology</span>
@@ -101,27 +99,60 @@
         
     </main>
 
-    <section class="border-t border-gray-800 py-8 bg-[#111] mt-4">
-        <div class="container mx-auto px-4 max-w-5xl">
-            <div class="grid grid-cols-3 gap-4 text-center">
-                <div class="p-3 bg-black rounded-lg border border-gray-800">
-                    <h3 class="text-sm font-bold mb-1 text-white">Smart Touch</h3>
-                    <p class="text-gray-500 text-xs hidden md:block">Interactive display control.</p>
+    <section class="border-t border-gray-800 py-10 bg-[#0f0f0f]">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-xl font-bold text-center mb-8 text-gray-200">Next-Generation Capabilities</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+                <div class="p-4 bg-black rounded-xl border border-gray-800 flex items-start">
+                    <i class="fas fa-circle-notch text-blue-500 text-xl mr-4 mt-1"></i>
+                    <div>
+                        <h3 class="font-bold text-white text-sm mb-1">Circular Smart Screen</h3>
+                        <p class="text-gray-400 text-xs">Classic full-size interactive display for precise voltage control and monitoring.</p>
+                    </div>
                 </div>
-                <div class="p-3 bg-black rounded-lg border border-gray-800">
-                    <h3 class="text-sm font-bold mb-1 text-white">2300mAh</h3>
-                    <p class="text-gray-500 text-xs hidden md:block">High-capacity battery.</p>
+                <div class="p-4 bg-black rounded-xl border border-gray-800 flex items-start">
+                    <i class="fas fa-bolt text-blue-500 text-xl mr-4 mt-1"></i>
+                    <div>
+                        <h3 class="font-bold text-white text-sm mb-1">2300mAh Battery</h3>
+                        <p class="text-gray-400 text-xs">High-capacity FAST CHARGING system for uninterrupted, long tattoo sessions.</p>
+                    </div>
                 </div>
-                <div class="p-3 bg-black rounded-lg border border-gray-800">
-                    <h3 class="text-sm font-bold mb-1 text-white">MCORE Motor</h3>
-                    <p class="text-gray-500 text-xs hidden md:block">Powerful stroke design.</p>
+                <div class="p-4 bg-black rounded-xl border border-gray-800 flex items-start">
+                    <i class="fas fa-cogs text-blue-500 text-xl mr-4 mt-1"></i>
+                    <div>
+                        <h3 class="font-bold text-white text-sm mb-1">MCORE Motor System</h3>
+                        <p class="text-gray-400 text-xs">Super integrated structural design with a 4.5mm extra-large stroke for power.</p>
+                    </div>
+                </div>
+                <div class="p-4 bg-black rounded-xl border border-gray-800 flex items-start">
+                    <i class="fas fa-magnet text-blue-500 text-xl mr-4 mt-1"></i>
+                    <div>
+                        <h3 class="font-bold text-white text-sm mb-1">Magnetic Integration</h3>
+                        <p class="text-gray-400 text-xs">Operate independently with a magnetic function and an integrated charging dock.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="text-center py-4 text-gray-600 text-xs border-t border-gray-900">
-        <p>Isuru Madushan &copy; 2024 InkWith.Me.</p>
+    <footer class="bg-black py-8 border-t border-gray-900 text-center">
+        <div class="container mx-auto px-4">
+            <div class="mb-4">
+                <h2 class="text-lg font-bold tracking-widest uppercase mb-1">InkWith<span class="accent-color">.Me</span></h2>
+                <p class="text-gray-600 text-xs max-w-sm mx-auto">Activating your artistic inspiration with top-tier wireless tattoo technology.</p>
+            </div>
+            
+            <div class="flex justify-center gap-6 mb-6 text-gray-500 text-xs font-semibold">
+                <a href="#" class="hover:text-blue-500 transition">Privacy Policy</a>
+                <a href="#" class="hover:text-blue-500 transition">Terms of Service</a>
+                <a href="#" class="hover:text-blue-500 transition">Contact Support</a>
+            </div>
+
+            <p class="text-gray-600 text-xs">&copy; 2024 InkWith.Me. All rights reserved.</p>
+            <p class="mt-2 text-[10px] text-gray-700 max-w-md mx-auto">
+                Disclosure: We are a professional review platform. We may earn an affiliate commission if you purchase through our links, at no extra cost to you.
+            </p>
+        </div>
     </footer>
 
     <script>
@@ -129,10 +160,7 @@
             var overlay = document.getElementById('soundOverlay');
             var iframe = document.getElementById('mainVideoFrame');
             
-            // Overlay එක අයින් කරනවා
             overlay.style.display = 'none';
-            
-            // වීඩියෝ එක සද්දෙත් එක්ක (mute=0) ආයෙත් ප්ලේ කරනවා
             iframe.src = "https://www.youtube.com/embed/QgIq_jWlAQA?autoplay=1&mute=0&loop=1&playlist=QgIq_jWlAQA&controls=1&showinfo=0&rel=0&modestbranding=1";
         }
     </script>
