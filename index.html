@@ -10,7 +10,25 @@
         .accent-color { color: #3b82f6; }
         .bg-accent { background-color: #3b82f6; }
         .bg-accent:hover { background-color: #2563eb; }
-        .video-container { box-shadow: 0 0 40px rgba(59, 130, 246, 0.2); }
+        
+        /* YouTube Video Responsive Container */
+        .video-container { 
+            position: relative; 
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0; 
+            overflow: hidden; 
+            box-shadow: 0 0 40px rgba(59, 130, 246, 0.2); 
+            background-color: #000;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            pointer-events: none; /* පාරිභෝගිකයාට වීඩියෝ එක නවත්වන්න බැරි වෙන්න */
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -30,14 +48,17 @@
             Experience the pinnacle of tattoo technology. Discover the MAST ULTRA and other top-rated, master-crafted wireless machines designed for precision and power.
         </p>
 
-        <div class="max-w-4xl mx-auto mb-12 rounded-2xl overflow-hidden video-container border border-gray-800 bg-black relative">
-            <video class="w-full h-auto" autoplay loop muted playsinline controls>
-                <source src="mast-video.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+        <div class="max-w-4xl mx-auto mb-12 rounded-2xl overflow-hidden video-container border border-gray-800">
+            
+            <iframe 
+                src="https://www.youtube.com/embed/VIDEO_ID_මෙතනට_දාන්න?autoplay=1&mute=1&loop=1&playlist=VIDEO_ID_මෙතනට_දාන්න&controls=0&showinfo=0&rel=0" 
+                allow="autoplay; encrypted-media" 
+                allowfullscreen>
+            </iframe>
+            
         </div>
 
-        <div class="flex flex-col items-center justify-center gap-4">
+        <div class="flex flex-col items-center justify-center gap-4 mt-8">
             <a href="https://dragonhawkofficial.com/product-category/tattoo-machines/ref/783/?orderby=rating&campaign=inkwithme" 
                target="_blank" rel="noopener noreferrer" 
                class="bg-accent text-white font-bold py-5 px-12 rounded-full text-xl transition duration-300 shadow-lg shadow-blue-500/50 transform hover:scale-105">
