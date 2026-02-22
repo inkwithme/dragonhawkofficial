@@ -6,174 +6,196 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-4X3HNLTT4F');
     </script>
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An unbiased, in-depth review of modern wireless tattoo machines. Exploring MCORE motors, battery efficiency, and ergonomics for professional artists.">
+    <meta name="keywords" content="tattoo machines, wireless tattoo pen, tattoo equipment review, MCORE motor, professional tattoo gear">
+    <meta name="robots" content="index, follow">
     
     <meta name="p:domain_verify" content="07da27ababdc43db5303683daedf4db8"/>
     
-    <title>Top Rated Tattoo Machines | InkWith.Me</title>
+    <title>The Evolution of Wireless Tattoo Machines | InkWith.Me Review</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
-        body { background-color: #0a0a0a; color: #ffffff; font-family: 'Inter', sans-serif; }
+        body { background-color: #0a0a0a; color: #e5e7eb; font-family: 'Inter', sans-serif; line-height: 1.7; }
         .accent-color { color: #3b82f6; }
         .bg-accent { background-color: #3b82f6; }
         .bg-accent:hover { background-color: #2563eb; }
         
         .video-wrapper {
-            position: relative;
-            border-radius: 1rem;
-            overflow: hidden;
-            box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
-            border: 1px solid #374151;
+            position: relative; border-radius: 1rem; overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); border: 1px solid #2d3748;
         }
-
-        .video-container { 
-            position: relative; 
-            padding-bottom: 56.25%; 
-            height: 0; 
-            background-color: #000;
-        }
-        .video-container iframe {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-        }
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; background-color: #000; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
         #soundOverlay {
-            position: absolute; inset: 0;
-            background: rgba(0,0,0,0.6);
-            display: flex; flex-direction: column;
-            align-items: center; justify-content: center;
-            cursor: pointer; z-index: 10;
-            transition: all 0.3s ease;
+            position: absolute; inset: 0; background: rgba(0,0,0,0.8);
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            cursor: pointer; z-index: 10; transition: background 0.3s ease;
         }
-        #soundOverlay:hover { background: rgba(0,0,0,0.4); }
+        #soundOverlay:hover { background: rgba(0,0,0,0.6); }
         .play-btn-wrap {
-            background: rgba(59, 130, 246, 0.9);
-            padding: 1.5rem; border-radius: 50%;
-            margin-bottom: 1rem;
-            animation: pulse 2s infinite;
+            background: rgba(59, 130, 246, 0.9); padding: 1.5rem; border-radius: 50%;
+            margin-bottom: 1rem; animation: pulse 2s infinite;
         }
         @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); }
-            70% { box-shadow: 0 0 0 20px rgba(59, 130, 246, 0); }
+            0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.6); }
+            70% { box-shadow: 0 0 0 15px rgba(59, 130, 246, 0); }
             100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
         }
+        
+        /* Typography for Article */
+        .prose h2 { color: #ffffff; font-size: 1.75rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 1rem; border-bottom: 1px solid #2d3748; padding-bottom: 0.5rem;}
+        .prose h3 { color: #ffffff; font-size: 1.25rem; font-weight: 600; margin-top: 2rem; margin-bottom: 0.75rem; }
+        .prose p { margin-bottom: 1.5rem; color: #a0aec0; }
+        .prose ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; color: #a0aec0; }
+        .prose li { margin-bottom: 0.5rem; }
+        .prose strong { color: #e2e8f0; }
+        
+        .page-section { display: none; animation: fadeIn 0.4s ease-in-out; }
+        .page-section.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body class="antialiased flex flex-col min-h-screen">
 
-    <nav class="py-3 border-b border-gray-800">
-        <div class="container mx-auto px-4 text-center">
-            <h1 class="text-xl font-bold tracking-widest uppercase">InkWith<span class="accent-color">.Me</span></h1>
+    <nav class="py-4 border-b border-gray-800 bg-[#0a0a0a]/90 backdrop-blur-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+            <h1 class="text-2xl font-black tracking-widest uppercase cursor-pointer" onclick="showPage('home')">InkWith<span class="accent-color">.Me</span></h1>
+            <ul class="flex gap-6 mt-4 md:mt-0 text-sm font-semibold text-gray-400">
+                <li><a href="#" onclick="showPage('home')" class="hover:text-blue-400 transition">Equipment Reviews</a></li>
+                <li><a href="#" onclick="showPage('about')" class="hover:text-blue-400 transition">Our Mission</a></li>
+                <li><a href="#" onclick="showPage('contact')" class="hover:text-blue-400 transition">Contact</a></li>
+            </ul>
         </div>
     </nav>
 
-    <main class="container mx-auto px-4 py-6 md:py-10 text-center max-w-4xl flex-grow">
+    <div class="bg-gray-900 border-b border-gray-800 text-center py-2 px-4">
+        <p class="text-xs text-gray-400">Providing unbiased analysis and technical reviews for the professional tattoo community.</p>
+    </div>
+
+    <main id="home" class="page-section active container mx-auto px-4 py-8 md:py-12 max-w-4xl flex-grow">
         
-        <h2 class="text-2xl md:text-4xl font-bold mb-3 leading-tight">
-            The Pinnacle of <span class="accent-color">Tattoo Technology</span>
-        </h2>
-        <p class="text-gray-400 text-sm md:text-base mb-6 max-w-xl mx-auto">
-            Discover Master-crafted wireless machines designed for precision and power.
-        </p>
+        <header class="text-center mb-10">
+            <span class="bg-gray-800 text-gray-300 border border-gray-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Technical Analysis</span>
+            <h2 class="text-3xl md:text-5xl font-black mt-5 mb-4 leading-tight text-white">
+                The Evolution of <span class="accent-color">Wireless Tattoo Machines</span>
+            </h2>
+            <p class="text-gray-400 text-sm md:text-lg mb-6 max-w-2xl mx-auto">
+                An in-depth look at how modern motor technology and battery efficiency are reshaping the workflow of professional tattoo artists in 2024.
+            </p>
+        </header>
 
-        <div class="video-wrapper mb-8">
+        <div class="video-wrapper mb-12">
             <div id="soundOverlay" onclick="playWithSound()">
-                <div class="play-btn-wrap">
-                    <i class="fas fa-volume-up text-white text-3xl"></i>
-                </div>
-                <p class="text-white font-bold tracking-wider uppercase">Click to Play with Sound</p>
+                <div class="play-btn-wrap"><i class="fas fa-play text-white text-3xl ml-1"></i></div>
+                <p class="text-white font-medium tracking-wider uppercase text-sm">Watch the Technical Breakdown</p>
             </div>
-
             <div class="video-container">
                 <iframe id="mainVideoFrame"
                     src="https://www.youtube.com/embed/QgIq_jWlAQA?autoplay=1&mute=1&loop=1&playlist=QgIq_jWlAQA&controls=0&showinfo=0&rel=0&modestbranding=1" 
-                    allow="autoplay; encrypted-media" 
-                    allowfullscreen>
+                    allow="autoplay; encrypted-media" allowfullscreen>
                 </iframe>
             </div>
         </div>
 
-        <div class="flex flex-col items-center justify-center mt-2 mb-4">
+        <article class="prose text-left mb-12 bg-[#111] p-6 md:p-10 rounded-2xl border border-gray-800 shadow-xl">
+            <p>The transition from traditional coil machines and tethered rotaries to fully wireless systems marks one of the most significant shifts in the tattoo industry. Artists are no longer restricted by power supply cables, allowing for better ergonomics and a cleaner workspace. However, early wireless models struggled with battery consistency and motor torque. Today, we examine the current state of wireless technology and what artists should look for in a modern machine.</p>
             
-            <div class="inline-flex items-center justify-center gap-2 px-5 py-2 mb-4 rounded-full bg-[#111] border border-gray-700 shadow-md text-sm">
-                <span class="flex h-2.5 w-2.5 relative">
-                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
-                </span>
-                <span class="text-gray-300">Limited Offer: <strong class="text-white tracking-wide">15% OFF</strong> Auto-Applied</span>
-            </div>
+            <h2>Analyzing the MCORE Motor Architecture</h2>
+            <p>The core component dictating a machine's performance is its motor. Recent advancements have introduced the <strong>MCORE Motor System</strong>. Unlike standard coreless motors, this architecture focuses on a highly integrated structural design aimed at delivering consistent torque output regardless of the battery's charge level.</p>
+            <ul>
+                <li><strong>Stroke Length Dynamics:</strong> Machines featuring a 4.5mm extra-large stroke are engineered specifically for demanding tasks such as single-pass bold lining and solid color saturation.</li>
+                <li><strong>Vibration Mitigation:</strong> Continuous vibration is a primary cause of hand fatigue. Modern chassis designs incorporate dampening materials to isolate motor vibration from the artist's grip.</li>
+            </ul>
 
-            <a href="https://dragonhawkofficial.com/product-category/tattoo-machines/ref/783/?orderby=rating&campaign=inkwithme" 
-               target="_blank" rel="noopener noreferrer" 
-               class="bg-accent w-full md:w-auto text-white font-bold py-4 px-10 rounded-full text-lg transition duration-300 shadow-lg shadow-blue-500/40 transform hover:-translate-y-1 hover:bg-blue-600 flex flex-col items-center border border-blue-400">
-               <span class="flex items-center"><i class="fas fa-shopping-cart mr-3"></i> Claim Discount & Shop Now</span>
-            </a>
+            <h2>Interface and Voltage Management</h2>
+            <p>Precise voltage control is critical. We are moving away from simple LED indicators towards comprehensive digital interfaces. The inclusion of a high-resolution, circular smart screen allows artists to monitor exact voltage levels, remaining battery percentage, and session duration at a glance. Tactile controls that offer adjustments in 0.1v increments ensure the machine can be perfectly tuned for specific techniques, from delicate stippling to heavy shading.</p>
+
+            <h2>Power Delivery: Battery Efficiency</h2>
+            <p>The limiting factor of any wireless tool is power duration. The integration of high-density lithium-ion cells, such as those offering a <strong>2300mAh capacity</strong>, has drastically improved operational times. In practical application, this translates to supporting full-day sessions (7 to 10 hours) on a single charge, depending on needle configuration and voltage settings.</p>
+            <ul>
+                <li><strong>Charging Protocols:</strong> The adoption of USB-C fast charging standardizes the process, significantly reducing downtime between sessions.</li>
+                <li><strong>Modular Design:</strong> Systems utilizing magnetic integration for battery packs allow for rapid, seamless swapping, ensuring workflow remains uninterrupted and hygienic standards are maintained.</li>
+            </ul>
+
+            <h2>Conclusion</h2>
+            <p>The latest generation of wireless tattoo machines represents a mature technology that meets the rigorous demands of professional artists. By prioritizing consistent power delivery, precise control, and ergonomic comfort, these tools are setting a new standard in the industry.</p>
             
-            <p class="mt-4 text-xs text-gray-500 font-medium tracking-wide">
-                ⭐ Trusted by professional artists worldwide
-            </p>
-        </div>
-        
+            <div class="flex flex-col items-center justify-center mt-10 mb-4 bg-gray-900/50 p-8 rounded-xl border border-gray-700">
+                <h3 class="mt-0 text-white text-lg">Have Questions About Machine Specifications?</h3>
+                <p class="text-sm text-center mb-6">Our team is available to discuss technical details and help you understand which equipment suits your specific style.</p>
+                <button onclick="showPage('contact')" class="bg-blue-600 text-white font-medium py-3 px-8 rounded-lg transition duration-300 hover:bg-blue-500 flex items-center">
+                   <i class="fas fa-envelope mr-2"></i> Contact Our Team
+                </button>
+            </div>
+        </article>
     </main>
 
-    <section class="border-t border-gray-800 py-10 bg-[#0f0f0f]">
-        <div class="container mx-auto px-4 max-w-4xl">
-            <h2 class="text-xl font-bold text-center mb-8 text-gray-200">Next-Generation Capabilities</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
-                <div class="p-4 bg-black rounded-xl border border-gray-800 flex items-start">
-                    <i class="fas fa-circle-notch text-blue-500 text-xl mr-4 mt-1"></i>
-                    <div>
-                        <h3 class="font-bold text-white text-sm mb-1">Circular Smart Screen</h3>
-                        <p class="text-gray-400 text-xs">Classic full-size interactive display for precise voltage control and monitoring.</p>
-                    </div>
-                </div>
-                <div class="p-4 bg-black rounded-xl border border-gray-800 flex items-start">
-                    <i class="fas fa-bolt text-blue-500 text-xl mr-4 mt-1"></i>
-                    <div>
-                        <h3 class="font-bold text-white text-sm mb-1">2300mAh Battery</h3>
-                        <p class="text-gray-400 text-xs">High-capacity FAST CHARGING system for uninterrupted, long tattoo sessions.</p>
-                    </div>
-                </div>
-                <div class="p-4 bg-black rounded-xl border border-gray-800 flex items-start">
-                    <i class="fas fa-cogs text-blue-500 text-xl mr-4 mt-1"></i>
-                    <div>
-                        <h3 class="font-bold text-white text-sm mb-1">MCORE Motor System</h3>
-                        <p class="text-gray-400 text-xs">Super integrated structural design with a 4.5mm extra-large stroke for power.</p>
-                    </div>
-                </div>
-                <div class="p-4 bg-black rounded-xl border border-gray-800 flex items-start">
-                    <i class="fas fa-magnet text-blue-500 text-xl mr-4 mt-1"></i>
-                    <div>
-                        <h3 class="font-bold text-white text-sm mb-1">Magnetic Integration</h3>
-                        <p class="text-gray-400 text-xs">Operate independently with a magnetic function and an integrated charging dock.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <main id="about" class="page-section container mx-auto px-4 py-12 max-w-3xl flex-grow prose">
+        <h2>Our Mission</h2>
+        <p>InkWith.Me was established with a singular focus: to provide the professional tattoo community with objective, in-depth analysis of modern tattooing technology.</p>
+        <p>As the industry evolves rapidly, distinguishing between genuine innovation and mere marketing hype becomes challenging. Our team, composed of individuals with backgrounds in both technical engineering and professional tattooing, dedicates itself to thoroughly evaluating machines, power systems, and accessories.</p>
+        <p>We aim to be a reliable resource, offering technical breakdowns and unbiased reviews to help artists make informed decisions regarding the tools of their trade.</p>
+    </main>
 
-    <footer class="bg-black py-8 border-t border-gray-900 text-center">
+    <main id="contact" class="page-section container mx-auto px-4 py-12 max-w-3xl flex-grow prose">
+        <h2>Contact Information</h2>
+        <p>We welcome inquiries regarding technical specifications, review requests, or general discussions about tattoo equipment. Please reach out to us using the information below.</p>
+        <div class="bg-[#111] p-8 rounded-xl border border-gray-800 mt-6 text-center shadow-lg">
+            <i class="fas fa-paper-plane text-3xl text-blue-500 mb-4"></i>
+            <h3 class="text-white mt-0">Direct Communication</h3>
+            <p class="mb-6 text-sm">For the fastest response, please email our support team.</p>
+            <a href="mailto:nsdsgbest@gmail.com" class="inline-block bg-gray-800 border border-gray-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-700 transition">nsdsgbest@gmail.com</a>
+        </div>
+        <p class="mt-6 text-xs text-center text-gray-500">Operating Hours: Monday - Friday, 9:00 AM - 5:00 PM (EST)</p>
+    </main>
+
+    <main id="privacy" class="page-section container mx-auto px-4 py-12 max-w-3xl flex-grow prose">
+        <h2>Privacy Policy</h2>
+        <p>Effective Date: January 1, 2024</p>
+        <p>InkWith.Me ("we", "us", or "our") respects the privacy of our users. This Privacy Policy outlines our practices concerning the collection, use, and disclosure of information when you access our website.</p>
+        <h3>1. Information Collection and Use</h3>
+        <p>We collect minimal data necessary to maintain and improve our website. This includes usage data (such as IP addresses, browser types, and pages visited) collected automatically via standard analytics tools.</p>
+        <h3>2. Cookies and Tracking Technologies</h3>
+        <p>We may use cookies to analyze web traffic and improve user experience. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent.</p>
+        <h3>3. Links to Other Sites</h3>
+        <p>Our website may contain links to external sites that are not operated by us. We strongly advise you to review the Privacy Policy of every site you visit. We have no control over and assume no responsibility for the content or practices of any third-party sites.</p>
+        <h3>4. Contact Us</h3>
+        <p>If you have any questions regarding this policy, please contact us at nsdsgbest@gmail.com.</p>
+    </main>
+
+    <main id="terms" class="page-section container mx-auto px-4 py-12 max-w-3xl flex-grow prose">
+        <h2>Terms of Service</h2>
+        <p>By accessing the website at InkWith.Me, you are agreeing to be bound by these terms of service and all applicable laws and regulations.</p>
+        <h3>1. Use License</h3>
+        <p>Permission is granted to temporarily download one copy of the materials (information or software) on InkWith.Me's website for personal, non-commercial transitory viewing only.</p>
+        <h3>2. Disclaimer</h3>
+        <p>The materials on InkWith.Me's website are provided on an 'as is' basis. InkWith.Me makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
+        <h3>3. Limitations</h3>
+        <p>In no event shall InkWith.Me or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on InkWith.Me's website.</p>
+    </main>
+
+    <footer class="bg-black py-8 border-t border-gray-900 text-center mt-auto">
         <div class="container mx-auto px-4">
-            <div class="mb-4">
+            <div class="mb-4 text-center cursor-pointer" onclick="showPage('home')">
                 <h2 class="text-lg font-bold tracking-widest uppercase mb-1">InkWith<span class="accent-color">.Me</span></h2>
-                <p class="text-gray-600 text-xs max-w-sm mx-auto">Activating your artistic inspiration with top-tier wireless tattoo technology.</p>
+                <p class="text-gray-600 text-xs max-w-sm mx-auto">Technical Analysis & Reviews for Professional Artists.</p>
             </div>
             
-            <div class="flex justify-center gap-6 mb-6 text-gray-500 text-xs font-semibold">
-                <a href="#" class="hover:text-blue-500 transition">Privacy Policy</a>
-                <a href="#" class="hover:text-blue-500 transition">Terms of Service</a>
-                <a href="#" class="hover:text-blue-500 transition">Contact Support</a>
+            <div class="flex justify-center gap-4 md:gap-6 mb-6 text-gray-500 text-xs font-semibold flex-wrap">
+                <a href="#" onclick="showPage('privacy')" class="hover:text-gray-300 transition">Privacy Policy</a>
+                <a href="#" onclick="showPage('terms')" class="hover:text-gray-300 transition">Terms of Service</a>
+                <a href="#" onclick="showPage('about')" class="hover:text-gray-300 transition">About Us</a>
+                <a href="#" onclick="showPage('contact')" class="hover:text-gray-300 transition">Contact</a>
             </div>
 
-            <p class="text-gray-600 text-xs">&copy; 2024 InkWith.Me. All rights reserved.</p>
-            <p class="mt-2 text-[10px] text-gray-700 max-w-md mx-auto">
-                Disclosure: We are a professional review platform. We may earn an affiliate commission if you purchase through our links, at no extra cost to you.
-            </p>
+            <p class="text-gray-700 text-xs">&copy; 2024 InkWith.Me. All rights reserved.</p>
         </div>
     </footer>
 
@@ -181,9 +203,17 @@
         function playWithSound() {
             var overlay = document.getElementById('soundOverlay');
             var iframe = document.getElementById('mainVideoFrame');
-            
             overlay.style.display = 'none';
             iframe.src = "https://www.youtube.com/embed/QgIq_jWlAQA?autoplay=1&mute=0&loop=1&playlist=QgIq_jWlAQA&controls=1&showinfo=0&rel=0&modestbranding=1";
+        }
+
+        function showPage(pageId) {
+            var pages = document.querySelectorAll('.page-section');
+            pages.forEach(function(page) {
+                page.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
 
